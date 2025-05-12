@@ -2,9 +2,19 @@
 #include <map>
 using namespace std;
 
+int sortMe(vector<int> roundParam, vector<int> timeParam) {
+    for (int i = 0; i < size(roundParam); i++) {
+        if roundParam[i] < 
+    }
+}
+
 int main(void) {
     int numTeams, roundParticipated;
     map<string, vector<int>> teamInfo; // teamName: [total best 6 rounds, total lowest 6 time]
+    // Sort by the high-low rounds, sort by low-high time
+    
+    string winnerName;
+    int highestRound = 0, lowestTime = 2147483647; // Infinity
 
     cin >> numTeams;
     for (int i = 0;  i < numTeams; i++) {
@@ -23,10 +33,13 @@ int main(void) {
             tempTime.push_back(y);
         }
 
+        for (auto i: tempRounds) {
+
+        }
+
     }
 
-    string winnerName;
-    int highestRound = 0, lowestTime = 2147483647; // Infinity
+    
 
     // Loop through the map
     for (const auto& entry : teamInfo) {
