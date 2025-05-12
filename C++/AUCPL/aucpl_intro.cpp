@@ -4,27 +4,25 @@ using namespace std;
 
 int main(void) {
     int numTeams, roundParticipated;
-    map<string, vector<int>> teamInfo; // teamName: [total rounds, total time]
+    map<string, vector<int>> teamInfo; // teamName: [total best 6 rounds, total lowest 6 time]
 
     cin >> numTeams;
     for (int i = 0;  i < numTeams; i++) {
         string teamName;
         cin >> teamName;
 
-        int roundRes, totalRounds, totalTime;
-        cin >> roundRes;
+        int roundsPlayed;
+        cin >> roundsPlayed;
 
-        // Get total rounds and time for specific team
-        for (int i = 0; i < roundRes; i++){
+        vector<int> tempRounds, tempTime;
+        for(int i = 0; i < roundsPlayed; i++) {
             int x, y;
             cin >> x >> y;
-            totalRounds += x;
-            totalTime += y;
+
+            tempRounds.push_back(x);
+            tempTime.push_back(y);
         }
 
-        // Store data
-        teamInfo[teamName].push_back(totalRounds);
-        teamInfo[teamName].push_back(totalTime);
     }
 
     string winnerName;
